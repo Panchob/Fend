@@ -35,7 +35,7 @@ function isElementInViewport (el) {
 function populateNavBar(){
     let listElements = "";
     for (const section of sections) {
-        const list = `<li class=menu__link>
+        const list = `<li id="nav_${section.id}" class=menu__link>
                     <a name="${section.id}">${section.getAttribute("data-nav")}</a>
                 </li>`;
         listElements += list;
@@ -46,11 +46,15 @@ function populateNavBar(){
 
 function setSectionActive(){
     for (const section of sections) {
+        let liToActivate = document.getElementById(`nav_${section.id}`)
+        
         if (isElementInViewport(section)){
             section.classList.add("active");
+            liToActivate.classList.replace("menu__link", "activeNav");
         }
         else{
             section.classList.remove("active");
+            liToActivate.classList.replace("activeNav", "menu__link");
         }
     }
 }

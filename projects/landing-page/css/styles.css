@@ -67,7 +67,6 @@ section {
 .navbar__menu ul {
     padding-left: 0;
     margin: 0;
-    text-align: right;
 }
 
 .navbar__menu li {
@@ -75,7 +74,6 @@ section {
 }
 
 .navbar__menu .menu__link {
-    display: block;
     padding: 1em;
     font-weight: bold;
     text-decoration: none;
@@ -88,10 +86,18 @@ section {
     transition: ease 0.3s all;
 }
 
+.navbar__menu .activeNav {
+    padding: 1em;
+    font-weight: bold;
+    background: #333;
+    color: #fff;
+    text-decoration: underline;
+}
+
 /* Header Styles */
 .page__header {
     background: #fff;
-    position: relative;
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 5;
